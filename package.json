@@ -1,0 +1,47 @@
+{
+  "name": "electronupdatetest",
+  "version": "1.1.10",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . MyApp",
+    "dist": "electron-builder",
+    "publish": "electron-builder -p always",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.0",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.2.0"
+  },
+  "build": {
+    "appId": "<YOUR APP ID>",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "category": "your.app.category.type",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "<GITHUB USERNAME>",
+        "repo": "<REPO NAME>",
+        "private" : true,
+        "token" : "<YOUR GITHUB ACCESS TOKEN>"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-log": "^4.3.1",
+    "electron-updater": "^4.3.5"
+  }
+}
